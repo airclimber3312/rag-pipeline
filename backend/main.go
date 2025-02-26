@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"os"
 	"strings"
 	"sync"
 	"time"
@@ -129,13 +130,17 @@ func queryHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func callRAGService(doc, query string) (string, error) {
+	ragServiceURL := os.Getenv("RAG_SERVICE_URL")
+	if ragServiceURL == "" {
+		ragServiceURL = "http://localhost:5000" // Fallback for local testing
+	}
 	payload := map[string]string{"document": doc, "query": query}
 	jsonData, err := json.Marshal(payload)
 	if err != nil {
 		return "", err
 	}
 
-	resp, err := http.Post("http://localhost:5000/rag", "application/json", bytes.NewBuffer(jsonData))
+	resp, err := http.Post(ragServiceURL+"/rag", "application/json", bytes.NewBuffer(jsonData))
 	if err != nil {
 		return "", err
 	}

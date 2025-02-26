@@ -113,26 +113,8 @@ npm start
     
 
 ### Docker Setup (Optional)
-
-1.  **Build and Run Go Backend**:
-    ```bash
-    cd backenddocker build -t rag-backend .
-    docker run -p 8080:8080 rag-backend
-    ``` 
     
-2.  **Build and Run Python RAG Service**:
-    ```bash
-    cd ../rag-servicedocker build -t rag-service .
-    docker run -p 5000:5000 rag-service
-    ```
-    
-3.  **Build and Run Frontend**:
-    ```bash
-    cd ../rag-frontenddocker build -t frontend .
-    docker run -p 3000:3000 rag-frontend
-    ```
-    
-4.  **Docker Compose** 
+**Docker Compose** 
     ```bash
     docker-compose up
     ```

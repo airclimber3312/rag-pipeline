@@ -6,6 +6,8 @@ services:
       - "8080:8080"
     depends_on:
       - rag-service
+    environment:
+      - RAG_SERVICE_URL=http://rag-service:5000
   rag-service:
     build: ./rag-service
     ports:
@@ -16,3 +18,6 @@ services:
       - "3000:3000"
     depends_on:
       - backend
+networks:
+  default:
+    driver: bridge
