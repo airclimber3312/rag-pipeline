@@ -47,7 +47,7 @@ rag-pipeline/
 
 #### Step 1: Clone or Create the Project
 
-*   If using Git: git clone .
+*   If using Git: git clone [rag-pipeline](https://github.com/airclimber3312/rag-pipeline)
     
 *   Otherwise, manually create the directory structure and copy the files from the provided code snippets.
     
