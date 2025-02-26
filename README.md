@@ -212,3 +212,6 @@ npm start
 *   **Model Optimization**: GPT-2 could be quantized (e.g., with ONNX) for faster CPU inference.
     
 *   **Single-Language Solution**: Explored running GPT-2 in Go via ONNX bindings but abandoned due to complexity and lack of free, mature libraries.
+
+### Result as image
+![image](https://github.com/user-attachments/assets/4de652bf-e0fe-4025-9848-09a125077cf8)
